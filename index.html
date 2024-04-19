@@ -1,0 +1,30 @@
+---
+title: Startpagina Gegevensboekhouding
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1 style="font-size: 1.4em; margin-top: 20px">{{ page.title }}</h1>
+  </header>
+  <main class="cards">
+    {% for card in site.data.cards %}
+    <div class="card">
+        <img src="{{ card.image }}">
+        <div class="card__content">
+            <h2>{{ card.title }}</h2>
+            <p>{{ card.description }}</p>
+            <p><a target="_blank" href="{{ card.url }}">{{ card.title }}</a></p>
+        </div>
+    </div>
+    {% endfor %}
+  </main>
+</body>
+</html>
